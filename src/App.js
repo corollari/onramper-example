@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import OnramperWidget from '@onramper/widget'
+
+const apiKey = 'pk_test_trQ0nGBcmU_JY41N8Tl50Q00'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
+        <div className={'widget-container'}>
+          <OnramperWidget
+            API_KEY={apiKey}
+            onlyGateways={['Moonpay']}
+          />
+        </div>
+      </div>
+    </>
   );
 }
 
